@@ -1,0 +1,26 @@
+{
+  "name": "hungryhungryhippo",
+  "description": "feed the hippo or it will feed on you",
+  "main": "index.js",
+  "authors": [
+    "nr <nicholas.raethke@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "karma": "^0.4.6",
+    "jasmine-core": "jasmine#^2.8.0"
+  }
+}
