@@ -1,6 +1,6 @@
 {
-  "name": "hungryhungryhippo",
-  "description": "feed the hippo or it will feed on you",
+  "name": "bitCrypt",
+  "description": "userDash for your crypt",
   "main": "index.js",
   "authors": [
     "nr <nicholas.raethke@gmail.com>"
