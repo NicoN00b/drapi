@@ -14,6 +14,6 @@ getBitAPI (usd, gbp, eur){
   });
 }
 
-bitTicker (usd, gbp, eur) {
+var bitTicker = {
   
 }
