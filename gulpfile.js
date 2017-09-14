@@ -37,7 +37,7 @@ gulp.task('bowerCSS', function () {
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
 
 gulp.task('concatInterface', function() {
-  return gulp.src(['./js/hippointerface.js'])
+  return gulp.src(['./js/*.js'])
   .pipe(concat('allConcat.js'))
   .pipe(gulp.dest('./tmp'));
 });
