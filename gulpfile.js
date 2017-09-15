@@ -20,6 +20,7 @@ var lib = require('bower-files')({
 });
 var browserSync = require('browser-sync').create();
 var babelify = require("babelify");
+var handlebars = require("handlebars");
 
 gulp.task('bowerJS', function () {
   return gulp.src(lib.ext('js').files)

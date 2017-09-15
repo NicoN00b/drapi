@@ -1,18 +1,18 @@
 {
-  "name": "bitCrypt",
+  "name": "DrApi",
   "version": "1.0.0",
-  "description": "bitCrypt user dash",
+  "description": "Doc Search",
   "main": "index.js",
   "scripts": {
     "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nicholasraethke/bitCrypt.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/nicholasraethke/bitCrypt.git",
+  "homepage": "",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
@@ -40,6 +40,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
-    "bower": "^1.7.10"
+    "bower": "^1.7.10",
+    "handlebars": "^4.0.10"
   }
 }

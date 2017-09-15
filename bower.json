@@ -1,12 +1,12 @@
 {
-  "name": "bitCrypt",
-  "description": "userDash for your crypt",
+  "name": "DrApi",
+  "description": "Api Search for Doctors",
   "main": "index.js",
   "authors": [
     "nr <nicholas.raethke@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/nicholasraethke/bitCrypt",
   "ignore": [
     "**/.*",
     "node_modules",
