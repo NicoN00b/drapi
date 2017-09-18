@@ -21,7 +21,7 @@ $(function(){
     event.preventDefault();
     $('.result').show();
     let name = $('#byDr').val();
-    let search = DrSearchModule.findDoctors(name, dataResult);
+    let search = DrSearchModule.findDoctors(name, data);
 
   });
 });
