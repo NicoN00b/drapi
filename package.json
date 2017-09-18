@@ -1,5 +1,5 @@
 {
-  "name": "DrApi",
+  "name": "drapi",
   "version": "1.0.0",
   "description": "Doc Search",
   "main": "index.js",
