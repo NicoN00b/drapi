@@ -10,12 +10,14 @@ let DrSearchModule = function(){
         format: 'json'
       },
       success: (response) => {
-        dataResult(response);
-
-
+        if(response.data.length != 0) {
+          dataResult(response);
+        } else {
+          $('.result').html("We're Sorry, your search returned no results");
+        }
       },
       error: function() {
-        $('#errors').html("There was an error processing your request. Please try again.");
+        $('.result').html("There was an error processing your request. Please try again.");
       }
     });
   };
