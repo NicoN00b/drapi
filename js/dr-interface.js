@@ -12,7 +12,7 @@ function dataResult(response) {
     let accepts_new_patients;
 
 
-    return $('.result').append(`<li>$.{data.profile.first_name}</li> <li>${data.profile.last_name}</li> <li>${data.visit_address}</li> <li>${data.website}</li> <li>${data.accepts_new_patients}</li>`);
+    return $('.result').append(`<li>${data.profile.first_name}</li> <li>${data.profile.last_name}</li> <li>${data.visit_address}</li> <li>${data.website}</li> <li>${data.accepts_new_patients}</li>`);
   });
 }
 
@@ -21,7 +21,7 @@ $(function(){
     event.preventDefault();
     $('.result').show();
     let name = $('#byDr').val();
-    let search = DrSearchModule.findDoctors(name, data);
+    let search = DrSearchModule.findDoctors(name);
 
   });
 });
