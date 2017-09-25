@@ -1,4 +1,4 @@
-import {DrSearchModule} from './../js/dr.js';
+import {drSearchModule as drSearch} from './../js/dr.js';
 
 // let drSearchModule = new DrSearchModule();
 let doctorResults = function(response) {
@@ -18,16 +18,26 @@ let doctorResults = function(response) {
 
     $('.result').append(`<li>${first_name} + " " + ${last_name}</li> <li>${visit_address}</li> <li>${website}</li> <li>${accepts_new_patients}</li>`);
   });
-
+};
 
   $(function(){
     $('#searchDr').submit(function(event) {
-      $('.result').hide();
+      // $('.result').hide();
       event.preventDefault();
       $('.result').show();
       let name = $('#byDr').val();
-      drSearchModule.findDoctors(name, doctorResults);
+      drSearch.findDoctors(name, doctorResults);
 
     });
   });
-};
+
+  $(function(){
+    $('#searchDr').submit(function(event) {
+      // $('.result').hide();
+      event.preventDefault();
+      $('.result').show();
+      let query = $('#conditon').val();
+      drSearch.searchSymptoms(query, doctorResults);
+
+    });
+  });
