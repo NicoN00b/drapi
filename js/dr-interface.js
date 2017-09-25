@@ -1,8 +1,7 @@
-var drSearchModule = require('./../js/dr.js').drSearchModule;
-var apiKey = require('./../.env').apiKey;
+import {DrSearchModule} from './../js/dr.js';
 
-function doctorResults(response) {
-  // let data = response.data;
+// let drSearchModule = new DrSearchModule();
+let doctorResults = function(response) {
 
   response.data.forEach(function(doctor){
     let first_name = doctor.profile.first_name;
@@ -19,14 +18,16 @@ function doctorResults(response) {
 
     $('.result').append(`<li>${first_name} + " " + ${last_name}</li> <li>${visit_address}</li> <li>${website}</li> <li>${accepts_new_patients}</li>`);
   });
-}
 
-$(function(){
-  $('#searchDr').submit(function(event) {
-    event.preventDefault();
-    $('.result').show();
-    let name = $('#byDr').val();
-    let search = DrSearchModule.findDoctors(name, doctorResults);
 
+  $(function(){
+    $('#searchDr').submit(function(event) {
+      $('.result').hide();
+      event.preventDefault();
+      $('.result').show();
+      let name = $('#byDr').val();
+      drSearchModule.findDoctors(name, doctorResults);
+
+    });
   });
-});
+};

@@ -1,17 +1,37 @@
-var apikey = require('./../.env').apiKey;
+let apiKey = require('./../.env').apiKey;
 
-let DrSearchModule = {
+export let DrSearchModule = {
 
-  findDoctors: function(name, data){
+  findDoctors: function(name, doctorResults) {
     $.ajax({
-      url: `https://api.betterdoctor.com/2016-03-01/doctors?location=45.5202,-12.6742,100&skip=2&limit=10&user_key+${apiKey}`,
-      type: 'GET',
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=or-portland&skip=2&limit=10&user_key=${apiKey}`,
+      type: "GET",
       data: {
-        format: 'json'
+        format: "json"
       },
       success: (response) => {
-        if(response.data.length != 0) {
-          data(response);
+        if (response.data.length != 0) {
+          doctorResults(response);
+        } else {
+          $('.result').html("We're Sorry, your search returned no results");
+        }
+      },
+      error: function() {
+        $('.result').html("There was an error processing your request. Please try again.");
+      }
+    });
+  },
+
+  searchSymptoms: function(query, symptom) {
+    $.ajax({
+      url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${symptom}&location=or-portland&skip=2&limit=10&user_key=${apiKey}`,
+      type: "GET",
+      data: {
+        format: "json"
+      },
+      success: (response) => {
+        if (response.data.length != 0) {
+          searchSymptoms(response);
         } else {
           $('.result').html("We're Sorry, your search returned no results");
         }
