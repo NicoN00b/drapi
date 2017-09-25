@@ -1,5 +1,5 @@
 {
-  "name": "DrApi",
+  "name": "dr-api",
   "description": "Api Search for Doctors",
   "main": "index.js",
   "authors": [
