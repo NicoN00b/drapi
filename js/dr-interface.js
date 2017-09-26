@@ -7,7 +7,14 @@ let doctorResults = function(response) {
     let first_name = doctor.profile.first_name;
     let last_name = doctor.profile.last_name;
     let visit_address = doctor.practices[0].visit_address.street + " " + doctor.practices[0].visit_address.city + ", " + doctor.practices[0].visit_address.state + " " + doctor.practices[0].visit_address.zip;
-    let website = doctor.practices[0].website;
+    let website;
+
+    if (doctor.practices.website === undefined) {
+      website = "Unavailable";
+    } else {
+      return doctor.practices.website;
+    }
+
     let accepts_new_patients;
 
     if (doctor.practices[0].accepts_new_patients === true){
@@ -16,13 +23,21 @@ let doctorResults = function(response) {
       accepts_new_patients = "Not at this time";
     }
 
-    $('.result').append(`<li>${first_name} + " " + ${last_name}</li> <li>${visit_address}</li> <li>${website}</li> <li>${accepts_new_patients}</li>`);
+    $('.result').prepend(`
+      <div class="well">
+        <ul>
+          <li>Name: ${first_name} ${last_name}</li>
+          <li>Address: ${visit_address}</li>
+          <li>Website: ${website}</li>
+          <li>Accepting New Patients: ${accepts_new_patients}</li>
+        </ul>
+      </div>`
+    );
   });
 };
 
   $(function(){
     $('#searchDr').submit(function(event) {
-      // $('.result').hide();
       event.preventDefault();
       $('.result').show();
       let name = $('#byDr').val();
@@ -33,7 +48,6 @@ let doctorResults = function(response) {
 
   $(function(){
     $('#searchDr').submit(function(event) {
-      // $('.result').hide();
       event.preventDefault();
       $('.result').show();
       let query = $('#conditon').val();

@@ -1,0 +1,12 @@
+.result {
+  display: flex
+  flex-wrap: wrap;
+}
+body {
+  background-image: url(../img/bgimage.jpg);
+  background-size: cover;
+}
+h1 {
+  color: midnightblue;
+
+}

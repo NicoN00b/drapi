@@ -11,10 +11,9 @@ export let drSearchModule = {
       },
       success: (response) => {
         if (response.data.length != 0) {
-          doctorResults(response);
-          console.log(response);
+           return doctorResults(response);
         } else {
-          $('.result').html("We're Sorry, your search returned no results");
+          return "We're Sorry, your search returned no results";
         }
       },
       error: function() {
@@ -32,7 +31,7 @@ export let drSearchModule = {
       },
       success: (response) => {
         if (response.data.length != 0) {
-          searchSymptoms(response);
+          return searchSymptoms(response);
         } else {
           $('.result').html("We're Sorry, your search returned no results");
         }
