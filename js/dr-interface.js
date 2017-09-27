@@ -1,17 +1,19 @@
-import {drSearchModule as drSearch} from './../js/dr.js';
+import {DrSearchModule as drSearch} from './../js/dr.js';
 
 // let drSearchModule = new DrSearchModule();
 let doctorResults = function(response) {
+
+  $('.result').empty();
 
   response.data.forEach(function(doctor){
     let first_name = doctor.profile.first_name;
     let last_name = doctor.profile.last_name;
     let visit_address = doctor.practices[0].visit_address.street + " " + doctor.practices[0].visit_address.city + ", " + doctor.practices[0].visit_address.state + " " + doctor.practices[0].visit_address.zip;
     let website;
-    if ( doctor.practices.website === undefined) {
+    if ( doctor.practices[0].website === undefined) {
       website = "Unavailable";
     } else {
-      website = doctor.practices.website;
+      website = doctor.practices[0].website;
     }
 
     let accepts_new_patients;
@@ -53,7 +55,7 @@ let doctorResults = function(response) {
   });
 
   $(function(){
-    $('#searchDr').submit(function(event) {
+    $('#searchSymp').submit(function(event) {
       event.preventDefault();
       $('.result').show();
       let query = $('#conditon').val();

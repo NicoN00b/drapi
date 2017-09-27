@@ -1,7 +1,7 @@
 let apiKey = require('./../.env').apiKey;
 
-export let drSearchModule = {
-
+export let DrSearchModule = {
+  constructor() {},
   findDoctors: function(name, doctorResults) {
     $.ajax({
       url: `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=or-portland&skip=2&limit=10&user_key=${apiKey}`,
