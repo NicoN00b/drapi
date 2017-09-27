@@ -8,7 +8,7 @@
 
 This is a simple API call and response to find Doctors in the Portland Area by Name or Speciality
 
-![A Screen Shot of an example search for Cancer Doctors](/img/screen.png "Oncology")
+![A Screen Shot of an example search for Cancer Doctors](/img/Screen.png "Oncology")
 
 ## Setup/Installation Requirements
 
