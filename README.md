@@ -26,9 +26,11 @@ This is a simple API call and response to find Doctors in the Portland Area by N
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
+* Fork and clone the Repo from Github
+* In the project directory, run: npm install (this should take about 45 seconds to a minute)
+Next run: bower install (his should be very quick)
+Now that these are added, you should be able to run gulp build.  If there are any errors, the terminal should direct you to missing dependencies.
+* You will need to register for your own Api Key at developer.betterdoctor.com 
 * _easy-to-understand_
 * _format_
 

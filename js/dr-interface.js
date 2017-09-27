@@ -26,8 +26,8 @@ let doctorResults = function(response) {
     let phone;
     if (doctor.practices[0].phones[0].type === "landline"){
       phone = doctor.practices[0].phones[0].number;
-    } else if (doctor.practices.phones[1].type === "landline") {
-      phone = doctor.practices.phones[1].number;
+    } else if (doctor.practices[0].phones[1].type === "landline") {
+      phone = doctor.practices[0].phones[1].number;
     }
 
     $('.result').prepend(`
@@ -50,16 +50,17 @@ let doctorResults = function(response) {
       $('.result').show();
       let name = $('#byDr').val();
       drSearch.findDoctors(name, doctorResults);
-
     });
-  });
-
-  $(function(){
     $('#searchSymp').submit(function(event) {
       event.preventDefault();
       $('.result').show();
-      let query = $('#conditon').val();
+      let query = $('#condition').val();
+      console.log(query);
       drSearch.searchSymptoms(query, doctorResults);
 
     });
   });
+
+  // $(function(){
+  //
+  // });

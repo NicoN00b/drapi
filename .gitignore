@@ -1,3 +1,5 @@
+
+
 # Compiled source #
 ############
 *.com
@@ -38,9 +40,8 @@ node_modules/
 .DS_Store
 build/
 tmp/
+.env
 
 # bower #
 ###########
 bower_components/
-
-.env
