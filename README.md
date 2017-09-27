@@ -1,19 +1,3 @@
-To Do:
-
-Fix Doctor Search:
-  Should not show Doctor List and error
-  Should refresh page
-  needs website to work
-  needs phone to work
-
-Fix ailment speciality search
-  Should return results
-  Should also refresh page, clearing search box and results.
-
-Write a README
-
-Add photos
-
 # The Doctor Connection
 
 #### A quick search for doctors in Portland, 9.26.17
@@ -22,34 +6,42 @@ Add photos
 
 ## Description
 
-This is a simple API call and response to find Doctors in the Portland Area by Name or Speciality.
+This is a simple API call and response to find Doctors in the Portland Area by Name or Speciality
+
+![A Screen Shot of an example search for Cancer Doctors](/img/screen.png? "Oncology")
 
 ## Setup/Installation Requirements
 
 * Fork and clone the Repo from Github
-* In the project directory, run: npm install (this should take about 45 seconds to a minute)
-Next run: bower install (his should be very quick)
-Now that these are added, you should be able to run gulp build.  If there are any errors, the terminal should direct you to missing dependencies.
+* In the project directory, run:
+  * npm install (this should take about 45 seconds to a minute)
+  * Next run:
+  * bower install (his should be very quick)
+  * Now that these are added, you should be able to run:
+  * gulp build  
+  * If there are any errors, the terminal should direct you to missing dependencies.
 * You will need to register for your own Api Key at developer.betterdoctor.com
-* _easy-to-understand_
-* _format_
+  * Once you have your key, create a .env file in the top directory and add this code:
+  * exports.apiKey = "your3key0here3032"
+  * Don't forget to put .env in your .gitignore
+* run gulp build
+* and then run gulp serve
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+You are now ready to use the program.
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+It is possible that you may receive a 429 error ( Too many requests from the API), but it shouldn't happen too often.  The other issue is that the fields in the form do not reset, but it doesn't affect the results list.  
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+Any suggestions are welcome... nicholas.raethke@gmail.com
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+This program relies on JQuery to connect to the Better Doctor API.  It also uses a long list of node and bower dependencies. that can be viewed in the package.json file.  I created the project in Atom with a lot of help from JSHint.  A special shout out to CSS-Tricks, I just learned about this incredible resource.
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-Copyright (c) Creative Commons. Open Source
+Copyright (c)2017 Creative Commons. Open Source. Do what thou wilt.
+Except for the Better Doctor API... please visit their address to learn about restrictions and usage.

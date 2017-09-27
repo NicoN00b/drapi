@@ -23,7 +23,6 @@ export let DrSearchModule = {
   },
 
   searchSymptoms: function(query, doctorResults) {
-    console.log(doctorResults);
     $.ajax({
       url: `https://api.betterdoctor.com/2016-03-01/doctors?query=${query}&location=or-portland&user_key=${apiKey}`,
       type: "GET",
