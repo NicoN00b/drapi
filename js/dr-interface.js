@@ -8,11 +8,10 @@ let doctorResults = function(response) {
     let last_name = doctor.profile.last_name;
     let visit_address = doctor.practices[0].visit_address.street + " " + doctor.practices[0].visit_address.city + ", " + doctor.practices[0].visit_address.state + " " + doctor.practices[0].visit_address.zip;
     let website;
-
-    if (doctor.practices.website === undefined) {
+    if ( doctor.practices.website === undefined) {
       website = "Unavailable";
     } else {
-      return doctor.practices.website;
+      website = doctor.practices.website;
     }
 
     let accepts_new_patients;
@@ -22,6 +21,12 @@ let doctorResults = function(response) {
     } else {
       accepts_new_patients = "Not at this time";
     }
+    let phone;
+    if (doctor.practices[0].phones[0].type === "landline"){
+      phone = doctor.practices[0].phones[0].number;
+    } else if (doctor.practices.phones[1].type === "landline") {
+      phone = doctor.practices.phones[1].number;
+    }
 
     $('.result').prepend(`
       <div class="well">
@@ -29,6 +34,7 @@ let doctorResults = function(response) {
           <li>Name: ${first_name} ${last_name}</li>
           <li>Address: ${visit_address}</li>
           <li>Website: ${website}</li>
+          <li>Phone Number: ${phone}</li>
           <li>Accepting New Patients: ${accepts_new_patients}</li>
         </ul>
       </div>`
