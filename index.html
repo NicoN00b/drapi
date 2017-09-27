@@ -13,24 +13,35 @@
       <h1>Your Doctor Connection</h1>
 
     <div class="container-fluid">
-      <form id="searchDr">
-        <div class="form-group">
-          <label for="byDr">Search Doctor by Name</label>
-          <input id="byDr" type="text">
+      <div class="row">
+        <div class="col-md-5">
+          <form id="searchDr">
+            <div class="form-group">
+              <label for="byDr">Search Doctor by Name</label>
+              <input id="byDr" type="text">
+            </div>
+            <button type="submit" class="btn">Find Doctors</button>
+          </form>
         </div>
-        <button type="submit" class="btn">Find Doctors</button>
-      </form>
-      <br>
-      <form id="searchSymp">
-        <div class="form-group">
-          <label for="condition">Search by speciality or condition</label>
-          <input id="condition" type="text">
-        </div>
-        <button type="submit" class="btn">Find Doctors</button>
-      </form>
-      <ul class="result">
+        <div class="col-md-2">
 
-      </ul>
+        </div>
+        <div class="col-md-5"
+          <br>
+          <form id="searchSymp">
+            <div class="form-group">
+              <label for="condition">Search by speciality or condition</label>
+              <input id="condition" type="text">
+            </div>
+            <button type="submit" onclick="ClearFields();" class="btn">Find Doctors</button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="result">
+
+        </ul>
+      </div>
     </div>
   </body>
 </html>

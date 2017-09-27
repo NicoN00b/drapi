@@ -1,13 +1,25 @@
-.result {
+.container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.result {
+  flex-shrink: 1;
+  flex: none;
+  font-size: 20px;
 }
 body {
   background-image: url(../img/bgimage.jpg);
   background-size: cover;
 }
 h1 {
+  text-align: center;
   color: midnightblue;
-
+}
+.col-md-5 {
+  text-align: center;
+  align-items: center;
 }

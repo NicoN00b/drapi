@@ -8,12 +8,13 @@ let doctorResults = function(response) {
   response.data.forEach(function(doctor){
     let first_name = doctor.profile.first_name;
     let last_name = doctor.profile.last_name;
-    let visit_address = doctor.practices[0].visit_address.street + " " + doctor.practices[0].visit_address.city + ", " + doctor.practices[0].visit_address.state + " " + doctor.practices[0].visit_address.zip;
+    let image = `<img src="${doctor.profile.image_url}" alt="A picture of the Dr.">`;
+    let visit_address = doctor.practices[0].visit_address.street + ". <br>" + doctor.practices[0].visit_address.city + ", " + doctor.practices[0].visit_address.state + " " + doctor.practices[0].visit_address.zip;
     let website;
     if ( doctor.practices[0].website === undefined) {
       website = "Unavailable";
     } else {
-      website = doctor.practices[0].website;
+      website = `<a href="${doctor.practices[0].website}">Go</a>`;
     }
 
     let accepts_new_patients;
@@ -31,18 +32,25 @@ let doctorResults = function(response) {
     }
 
     $('.result').prepend(`
-      <div class="well">
-        <ul>
-          <li>Name: ${first_name} ${last_name}</li>
-          <li>Address: ${visit_address}</li>
-          <li>Website: ${website}</li>
-          <li>Phone Number: ${phone}</li>
-          <li>Accepting New Patients: ${accepts_new_patients}</li>
-        </ul>
-      </div>`
-    );
+      <div class="well
+        <div class="row">
+          <div class="col">
+            ${image}
+          </div>
+          <div class="col">
+            <ul>
+              <li>Name: ${first_name} ${last_name}</li>
+              <li>Address: ${visit_address}</li>
+              <li>Website: ${website}</li>
+              <li>Phone Number: ${phone}</li>
+              <li>Accepting New Patients: ${accepts_new_patients}</li>
+            </ul>
+          </div>
+        </div>
+      </div>`);
   });
 };
+
 
   $(function(){
     $('#searchDr').submit(function(event) {
@@ -55,12 +63,6 @@ let doctorResults = function(response) {
       event.preventDefault();
       $('.result').show();
       let query = $('#condition').val();
-      console.log(query);
       drSearch.searchSymptoms(query, doctorResults);
-
     });
   });
-
-  // $(function(){
-  //
-  // });

@@ -31,7 +31,6 @@ export let DrSearchModule = {
         format: "json"
       },
       success: (response) => {
-        console.log(response);
         if (response.data.length != 0) {
           return doctorResults(response);
         } else {
